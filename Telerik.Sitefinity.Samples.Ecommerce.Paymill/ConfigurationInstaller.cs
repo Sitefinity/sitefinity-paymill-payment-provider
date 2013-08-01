@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Telerik.Sitefinity.Abstractions;
 using Telerik.Sitefinity.Abstractions.VirtualPath.Configuration;
 using Telerik.Sitefinity.Configuration;
@@ -13,9 +9,13 @@ namespace Telerik.Sitefinity.Samples.Ecommerce.Paymill
 {
     public class ConfigurationInstaller
     {
+
+        /// <summary>
+        /// Installs Paymill as a PaymentProcessor in the Sitefinity Configuration and adds a virtual path to it's local path.
+        /// </summary>
         public static void PreApplicationStart()
         {
-            Bootstrapper.Initialized += (new EventHandler<ExecutedEventArgs>(ConfigurationInstaller.Bootstrapper_Initialized));
+            Bootstrapper.Initialized += new EventHandler<ExecutedEventArgs>(ConfigurationInstaller.Bootstrapper_Initialized);
         }
 
         private static void Bootstrapper_Initialized(object sender, ExecutedEventArgs e)
@@ -28,7 +28,7 @@ namespace Telerik.Sitefinity.Samples.Ecommerce.Paymill
             InstallPaymillVirtualPath();
             InstallPaymillConfiguration();
         }
-  
+
         private static void InstallPaymillVirtualPath()
         {
             var virtualPathConfig = Config.Get<VirtualPathSettingsConfig>();
@@ -47,7 +47,7 @@ namespace Telerik.Sitefinity.Samples.Ecommerce.Paymill
             }
         }
 
-        public static void InstallPaymillConfiguration()
+        private static void InstallPaymillConfiguration()
         {
             var config = Config.Get<PaymentProcessorConfig>();
             var key = PaymillProvider.GATEWAY_NAME;
@@ -57,7 +57,7 @@ namespace Telerik.Sitefinity.Samples.Ecommerce.Paymill
                 config = configManager.GetSection<PaymentProcessorConfig>();
                 config.PaymentProcessorProviders.Add(new PaymentProcessorProviderSettings(config.PaymentProcessorProviders)
                 {
-                    Id = PaymillProvider.PaymillProcessorId,
+                    Id = PaymillProvider.GATEWAY_ID.ToString(),
                     Name = key,
                     Title = "Paymill",
                     IsActive = true,

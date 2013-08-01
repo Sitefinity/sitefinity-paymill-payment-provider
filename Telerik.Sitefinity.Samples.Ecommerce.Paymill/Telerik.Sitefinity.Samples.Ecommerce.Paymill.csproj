@@ -4,14 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD575B10-46DB-4AB6-91BC-D7CDE794AC56}</ProjectGuid>
+    <ProjectGuid>{CC2A6DF2-5224-4537-AAD5-A7B34F2BED8E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Telerik.Sitefinity.Samples.Ecommerce.Paymill</RootNamespace>
     <AssemblyName>Telerik.Sitefinity.Samples.Ecommerce.Paymill</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\_DistributionTest\SitefinityWebApp\bin\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\Reference Assemblies\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,30 +48,35 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.OpenAccess">
-      <HintPath>..\..\_DistributionTest\SitefinityWebApp\bin\Telerik.OpenAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Sitefinity">
-      <HintPath>..\..\_DistributionTest\SitefinityWebApp\bin\Telerik.Sitefinity.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Sitefinity.Ecommerce">
-      <HintPath>..\..\_DistributionTest\SitefinityWebApp\bin\Telerik.Sitefinity.Ecommerce.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Sitefinity.Model">
-      <HintPath>..\..\_DistributionTest\SitefinityWebApp\bin\Telerik.Sitefinity.Model.dll</HintPath>
+      <HintPath>..\Reference Assemblies\Telerik\OpenAccess\Telerik.OpenAccess.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationInstaller.cs" />
-    <Compile Include="Provider\PaymillProvider.cs" />
-    <Compile Include="Settings\PaymillSettings.cs" />
-    <Compile Include="SettingsField\PaymillSettingsField.cs" />
+    <Compile Include="PaymillProvider.cs" />
+    <Compile Include="PaymillSettings.cs" />
+    <Compile Include="PaymillSettingsField.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="SettingsField\PaymillSettingsField.ascx">
+    <EmbeddedResource Include="PaymillSettingsField.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingsField\PaymillSettingsField.js" />
+    <EmbeddedResource Include="PaymillSettingsField.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Telerik.Sitefinity.Ecommerce\Telerik.Sitefinity.Ecommerce.csproj">
+      <Project>{895d15a0-64c1-484a-98ca-7251bc4d51cb}</Project>
+      <Name>Telerik.Sitefinity.Ecommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Telerik.Sitefinity.Model\Telerik.Sitefinity.Model.csproj">
+      <Project>{d7192694-82fa-4765-a290-e7ce39fb6e34}</Project>
+      <Name>Telerik.Sitefinity.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Telerik.Sitefinity\Telerik.Sitefinity.csproj">
+      <Project>{324addd1-4782-4857-abe7-de551da41df2}</Project>
+      <Name>Telerik.Sitefinity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

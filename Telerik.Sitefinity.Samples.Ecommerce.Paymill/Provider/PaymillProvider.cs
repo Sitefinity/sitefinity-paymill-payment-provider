@@ -106,6 +106,16 @@ namespace Telerik.Sitefinity.Samples.Ecommerce.Paymill
             string responseJson = this.GetWebRequest(paymillSettings.GatewayUrl, getRequestValues, paymillSettings.Timeout);
 
             IPaymentResponse payResponse = this.ParsePaymillResponse(responseJson);
+
+            
+            NameValueCollection newPost = new NameValueCollection();
+            newPost.Add("amount", "100");
+            newPost.Add("currency", "EUR");
+            newPost.Add("token",payResponse.GatewayTransactionID);
+            newPost.Add("description", "gangnam style");
+
+
+            this.GetWebRequest("https://api.paymill.com/v2/transactions", newPost, paymillSettings.Timeout);
         
             return payResponse;
         }

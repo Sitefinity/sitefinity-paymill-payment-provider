@@ -1,7 +1,9 @@
 ﻿using System.Reflection;
+using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Web;
+using System.Web.UI;
 using Telerik.Sitefinity.Samples.Ecommerce.Paymill;
 
 // General Information about an assembly is controlled through the following 
@@ -22,7 +24,7 @@ using Telerik.Sitefinity.Samples.Ecommerce.Paymill;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d67a14d6-5c1e-4837-be4f-1f4db80e4751")]
+[assembly: Guid("359b3b6f-03dc-46d7-b9e9-40d2babf598d")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -36,4 +38,6 @@ using Telerik.Sitefinity.Samples.Ecommerce.Paymill;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguageAttribute("en")]
 [assembly: PreApplicationStartMethod(typeof(ConfigurationInstaller), "PreApplicationStart")]
+[assembly: WebResource(PaymillSettingsField.scriptReference, "application/x-javascript")]
