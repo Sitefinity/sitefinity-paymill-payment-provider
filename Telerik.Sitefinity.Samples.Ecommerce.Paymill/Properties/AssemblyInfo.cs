@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.UI;
-using Telerik.Sitefinity.Samples.Ecommerce.Paymill;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -39,5 +38,5 @@ using Telerik.Sitefinity.Samples.Ecommerce.Paymill;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: NeutralResourcesLanguageAttribute("en")]
-[assembly: PreApplicationStartMethod(typeof(ConfigurationInstaller), "PreApplicationStart")]
-[assembly: WebResource(PaymillSettingsField.scriptReference, "application/x-javascript")]
+[assembly: PreApplicationStartMethod(typeof(Telerik.Sitefinity.Samples.Ecommerce.Paymill.ConfigurationInstaller), "PreApplicationStart")]
+[assembly: WebResource(Telerik.Sitefinity.Samples.Ecommerce.Paymill.PaymillSettingsField.scriptReference, "application/x-javascript")]

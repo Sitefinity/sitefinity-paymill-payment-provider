@@ -41,7 +41,7 @@ namespace Telerik.Sitefinity.Samples.Ecommerce.Paymill
                 {
                     VirtualPath = key,
                     ResolverName = "EmbeddedResourceResolver",
-                    ResourceLocation = "Telerik.Sitefinity.Samples.Ecommerce.Paymill"
+                    ResourceLocation = typeof(ConfigurationInstaller).Assembly.GetName().Name
                 });
                 configManager.SaveSection(virtualPathConfig);
             }

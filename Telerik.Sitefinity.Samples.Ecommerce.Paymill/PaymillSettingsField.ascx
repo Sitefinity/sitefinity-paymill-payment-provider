@@ -67,8 +67,8 @@
         </sitefinity:TextField>
         <sitefinity:ChoiceField ID="paymentType" DisplayMode="Write" RenderChoicesAs="DropDown" runat="server" Title='<%$Resources:OrdersResources, PaymentMethodPaymentType %>' CssClass="sfRadioList" WrapperTag="li">            
             <Choices>
-                <sitefinity:ChoiceItem Text="<%$Resources:OrdersResources, PaymentTypeSale %>" Selected="true" Value="sale"  />
-                <sitefinity:ChoiceItem Text="<%$Resources:OrdersResources, PaymentTypeAuthorize %>" Value="authorize"  />
+                <sitefinity:ChoiceItem Text="Sale Transaction" Selected="true" Value="sale"  />
+                <sitefinity:ChoiceItem Text="Preauthorizations" Value="authorize"  />
             </Choices>      
         </sitefinity:ChoiceField>
     </ul>

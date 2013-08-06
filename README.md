@@ -1,2 +1,3 @@
-sitefinity-paymill-payment-provider
-===================================
+========================
+Paymill Payment Provider
+========================
