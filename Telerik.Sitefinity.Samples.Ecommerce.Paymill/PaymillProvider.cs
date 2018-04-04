@@ -271,7 +271,7 @@ namespace Telerik.Sitefinity.Samples.Ecommerce.Paymill
         {
             NameValueCollection requestValues = new NameValueCollection();
 
-            requestValues.Add("transaction.mode", paymillSettings.ProcessingMode);
+            requestValues.Add("transaction.mode", paymillSettings.TestMode ? "CONNECTOR_TEST" : paymillSettings.ProcessingMode);
             requestValues.Add("channel.id", paymillSettings.TestMode ? paymillSettings.TestPublicApiKey : paymillSettings.LivePublicApiKey);
             requestValues.Add("jsonPFunction", PaymillProvider.JSON_PARSER_FUNCTION_NAME);
             requestValues.Add("account.number", data.CreditCardNumber);
